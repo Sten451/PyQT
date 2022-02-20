@@ -22,8 +22,10 @@ def host_ping(network):
         process.wait()
         if process.returncode == 0:
             result['available'].append(network_node_ip)
+            #print(f'{network_node_ip} адрес доступен')
         else:
             result['not_available'].append(network_node_ip)
+            #print(f'{network_node_ip} адрес НЕ доступен')
     return result
 
 
