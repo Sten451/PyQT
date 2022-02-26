@@ -498,3 +498,135 @@ gdrgrge
 2022-02-22 16:55:08,176 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=508, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59978), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля common.utils. Вызов из функции self._bootstrap_inner().Вызов из функции handler_message_from_users
 2022-02-22 16:55:08,176 INFO client.py Получено сообщение от пользователя test1:
 rty
+2022-02-26 17:11:08,654 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:11:08,655 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:11:08,655 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test3
+2022-02-26 17:11:08,655 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test1
+2022-02-26 17:11:08,671 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:11:08,672 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test2
+2022-02-26 17:11:10,703 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:11:10,703 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:11:10,718 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:11:28,858 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:11:28,859 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test1
+2022-02-26 17:11:28,888 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:11:28,888 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test2
+2022-02-26 17:11:28,922 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:11:28,922 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test3
+2022-02-26 17:11:30,899 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:11:30,931 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:11:30,977 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:12:26,293 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:12:26,298 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test2
+2022-02-26 17:12:26,303 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:12:26,303 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test1
+2022-02-26 17:12:26,324 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:12:26,325 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test3
+2022-02-26 17:12:28,351 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:12:28,383 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:12:32,856 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:12:32,856 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test2
+2022-02-26 17:12:32,866 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:12:32,866 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test1
+2022-02-26 17:12:32,878 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:12:32,878 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7777,с именем:test3
+2022-02-26 17:12:34,871 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:12:34,887 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:12:34,903 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:14:19,697 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:14:19,699 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7888,с именем:test2
+2022-02-26 17:14:19,705 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:14:19,705 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7888,с именем:test1
+2022-02-26 17:14:19,713 DEBUG decoration.py Была вызвана функция argv_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-26 17:14:19,713 INFO client.py Запущен клиент с ip-адресом127.0.0.1, порт:7888,с именем:test3
+2022-02-26 17:14:21,730 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7888, конечный компьютер отверг запрос на подключение.
+2022-02-26 17:14:21,746 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7888, конечный компьютер отверг запрос на подключение.
+2022-02-27 01:47:21,428 DEBUG decoration.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:21,428 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 8000, имя пользователя: test1
+2022-02-27 01:47:21,428 DEBUG decoration.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:21,428 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 8000, имя пользователя: test2
+2022-02-27 01:47:21,943 DEBUG client.py Сформировано presence сообщение для пользователя test1
+2022-02-27 01:47:21,943 DEBUG client.py Сформировано presence сообщение для пользователя test2
+2022-02-27 01:47:21,943 DEBUG decoration.py Была вызвана функция create_presence c параметрами ('test2',), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:21,943 DEBUG decoration.py Была вызвана функция create_presence c параметрами ('test1',), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:21,943 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62886), raddr=('127.0.0.1', 8000)>, {'action': 'presence', 'time': 1645915641.943996, 'user': {'account_name': 'test1'}}), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:22,459 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62886), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:22,459 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-02-27 01:47:22,459 DEBUG decoration.py Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:22,459 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2022-02-27 01:47:22,459 DEBUG client.py Запущены процессы
+2022-02-27 01:47:22,490 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62887), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:22,490 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-02-27 01:47:22,490 DEBUG decoration.py Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:47:22,490 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2022-02-27 01:47:22,490 DEBUG client.py Запущены процессы
+2022-02-27 01:47:47,966 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'test1', 'to': 'tst2', 'time': 1645915667.9660797, 'mess_text': 'fghfghfgh'}
+2022-02-27 01:47:47,966 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62886), raddr=('127.0.0.1', 8000)>, {'action': 'message', 'sender': 'test1', 'to': 'tst2', 'time': 1645915667.9660797, 'mess_text': 'fghfghfgh'}), {}. Вызов из модуля common.utils. Вызов из функции self._bootstrap_inner().Вызов из функции create_message
+2022-02-27 01:47:47,966 INFO client.py Отправлено сообщение для пользователя tst2
+2022-02-27 01:48:08,733 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'test1', 'to': 'test2', 'time': 1645915688.7338984, 'mess_text': 'dfgdfgdfg'}
+2022-02-27 01:48:08,733 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62886), raddr=('127.0.0.1', 8000)>, {'action': 'message', 'sender': 'test1', 'to': 'test2', 'time': 1645915688.7338984, 'mess_text': 'dfgdfgdfg'}), {}. Вызов из модуля common.utils. Вызов из функции self._bootstrap_inner().Вызов из функции create_message
+2022-02-27 01:48:08,733 INFO client.py Отправлено сообщение для пользователя test2
+2022-02-27 01:48:09,197 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62887), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции self._bootstrap_inner().Вызов из функции run
+2022-02-27 01:48:09,197 INFO client.py Получено сообщение от пользователя test1:
+dfgdfgdfg
+2022-02-27 01:50:08,532 DEBUG decoration.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:08,532 DEBUG decoration.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:08,548 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 8000, имя пользователя: test4
+2022-02-27 01:50:08,548 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 8000, имя пользователя: test5
+2022-02-27 01:50:08,579 DEBUG decoration.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:08,579 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 8000, имя пользователя: test3
+2022-02-27 01:50:08,579 DEBUG decoration.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:08,579 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 8000, имя пользователя: test2
+2022-02-27 01:50:08,687 DEBUG decoration.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:08,687 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 8000, имя пользователя: test1
+2022-02-27 01:50:09,057 DEBUG client.py Сформировано presence сообщение для пользователя test5
+2022-02-27 01:50:09,057 DEBUG decoration.py Была вызвана функция create_presence c параметрами ('test4',), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,057 DEBUG decoration.py Была вызвана функция create_presence c параметрами ('test5',), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,057 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62964), raddr=('127.0.0.1', 8000)>, {'action': 'presence', 'time': 1645915809.0572605, 'user': {'account_name': 'test4'}}), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,057 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=356, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62965), raddr=('127.0.0.1', 8000)>, {'action': 'presence', 'time': 1645915809.0572605, 'user': {'account_name': 'test5'}}), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,088 DEBUG client.py Сформировано presence сообщение для пользователя test3
+2022-02-27 01:50:09,088 DEBUG decoration.py Была вызвана функция create_presence c параметрами ('test3',), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,088 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=292, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62966), raddr=('127.0.0.1', 8000)>, {'action': 'presence', 'time': 1645915809.088511, 'user': {'account_name': 'test3'}}), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,104 DEBUG client.py Сформировано presence сообщение для пользователя test2
+2022-02-27 01:50:09,104 DEBUG decoration.py Была вызвана функция create_presence c параметрами ('test2',), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,104 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=404, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62967), raddr=('127.0.0.1', 8000)>, {'action': 'presence', 'time': 1645915809.1041372, 'user': {'account_name': 'test2'}}), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,104 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62964), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,104 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-02-27 01:50:09,104 DEBUG decoration.py Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,104 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2022-02-27 01:50:09,104 DEBUG client.py Запущены процессы
+2022-02-27 01:50:09,135 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=356, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62965), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,135 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-02-27 01:50:09,135 DEBUG decoration.py Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,135 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2022-02-27 01:50:09,135 DEBUG client.py Запущены процессы
+2022-02-27 01:50:09,166 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=292, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62966), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,166 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-02-27 01:50:09,166 DEBUG decoration.py Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,166 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2022-02-27 01:50:09,166 DEBUG client.py Запущены процессы
+2022-02-27 01:50:09,182 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=404, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62967), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,182 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-02-27 01:50:09,182 DEBUG decoration.py Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,182 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2022-02-27 01:50:09,182 DEBUG client.py Запущены процессы
+2022-02-27 01:50:09,213 DEBUG client.py Сформировано presence сообщение для пользователя test1
+2022-02-27 01:50:09,213 DEBUG decoration.py Была вызвана функция create_presence c параметрами ('test1',), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,213 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=404, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62968), raddr=('127.0.0.1', 8000)>, {'action': 'presence', 'time': 1645915809.2135117, 'user': {'account_name': 'test1'}}), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,718 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=404, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62968), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,718 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-02-27 01:50:09,718 DEBUG decoration.py Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__. Вызов из функции main().Вызов из функции main
+2022-02-27 01:50:09,718 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2022-02-27 01:50:09,718 DEBUG client.py Запущены процессы
+2022-02-27 01:50:43,103 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'test4', 'to': 'test5', 'time': 1645915843.1033995, 'mess_text': 'bcgbcgb'}
+2022-02-27 01:50:43,103 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62964), raddr=('127.0.0.1', 8000)>, {'action': 'message', 'sender': 'test4', 'to': 'test5', 'time': 1645915843.1033995, 'mess_text': 'bcgbcgb'}), {}. Вызов из модуля common.utils. Вызов из функции self._bootstrap_inner().Вызов из функции create_message
+2022-02-27 01:50:43,103 INFO client.py Отправлено сообщение для пользователя test5
+2022-02-27 01:50:43,228 DEBUG decoration.py Была вызвана функция get_message c параметрами (<socket.socket fd=356, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62965), raddr=('127.0.0.1', 8000)>,), {}. Вызов из модуля common.utils. Вызов из функции self._bootstrap_inner().Вызов из функции run
+2022-02-27 01:50:43,228 INFO client.py Получено сообщение от пользователя test4:
+bcgbcgb
+2022-02-27 01:50:51,802 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62964), raddr=('127.0.0.1', 8000)>, {'action': 'exit', 'time': 1645915851.8028672, 'account_name': 'test4'}), {}. Вызов из модуля common.utils. Вызов из функции self._bootstrap_inner().Вызов из функции run
+2022-02-27 01:50:51,802 INFO client.py Завершение работы по команде пользователя.
+2022-02-27 01:50:51,865 CRITICAL client.py Потеряно соединение с сервером.
+2022-02-27 01:50:59,029 DEBUG decoration.py Была вызвана функция send_message c параметрами (<socket.socket fd=292, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 62966), raddr=('127.0.0.1', 8000)>, {'action': 'exit', 'time': 1645915859.0292258, 'account_name': 'test3'}), {}. Вызов из модуля common.utils. Вызов из функции self._bootstrap_inner().Вызов из функции run
+2022-02-27 01:50:59,029 INFO client.py Завершение работы по команде пользователя.
+2022-02-27 01:50:59,472 CRITICAL client.py Потеряно соединение с сервером.

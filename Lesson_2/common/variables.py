@@ -2,7 +2,7 @@
 import logging
 
 # Порт по умолчанию для сетевого ваимодействия
-DEF_PORT = 7777
+DEF_PORT = 8000
 # IP адрес по умолчанию для подключения клиента
 DEF_IP_ADDRESS = '127.0.0.1'
 # Максимальная очередь подключений
@@ -39,3 +39,6 @@ RESPONSE_400 = {
     CODE_RESPONSE: 400,
     CODE_ERROR: None
 }
+
+# База данных для хранения данных сервера:
+SERVER_DATABASE = 'sqlite:///server_base.db3'

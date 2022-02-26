@@ -39,7 +39,7 @@ class Host:
 if __name__ == '__main__':
     class MyTest:
         port = Port()
-        ip = Host()
+        #ip = Host()
 
     test = MyTest()
     test.port = 50000

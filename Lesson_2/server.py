@@ -1,18 +1,19 @@
-"""Программа-сервер"""
-
-import socket, sys, json, argparse, select, time
-from common.variables import ACCOUNT_LOGIN, USER,CURRENT_TIME, ACTION,DEF_PORT, DEF_IP_ADDRESS, \
-    MAX_CONNECTIONS, CODE_RESPONSE, CODE_ERROR, CODE_PRESENCE, MESSAGE, MESSAGE_TEXT, SENDER, RESPONSE_200, RESPONSE_400, \
-    EXIT, DESTINATION
-from common.utils import get_message, send_message
+import socket
+import sys
+import argparse
+import json
 import logging
+import select
+import time
+import threading
 import log.config_server_log
+from errors import IncorrectDataRecivedError
+from common.variables import *
+from common.utils import *
 from decoration import log
 from descriptors import Port, Host
-from metaclasses import ServerVerifier
-
-SERVER_LOGGER = logging.getLogger('server')
-
+from metaclasses import ServerMaker
+from server_database import ServerStorage
 
 # Инициализация логирования сервера.
 logger = logging.getLogger('server')
@@ -29,21 +30,31 @@ def arg_parser():
     listen_port = namespace.p
     return listen_address, listen_port
 
-# Основной класс сервера
-class Server(metaclass=ServerVerifier):
-    listen_address = Host()
-    listen_port = Port()
 
-    def __init__(self, listen_address, listen_port):
+# Основной класс сервера
+class Server(threading.Thread, metaclass=ServerMaker):
+    port = Port()
+    addr = Host()
+
+    def __init__(self, listen_address, listen_port, database):
         # Параментры подключения
         self.addr = listen_address
         self.port = listen_port
+
+        # База данных сервера
+        self.database = database
+
         # Список подключённых клиентов.
         self.clients = []
+
         # Список сообщений на отправку.
         self.messages = []
+
         # Словарь содержащий сопоставленные имена и соответствующие им сокеты.
         self.names = dict()
+
+        # Конструктор предка
+        super().__init__()
 
     def init_socket(self):
         logger.info(
@@ -57,7 +68,7 @@ class Server(metaclass=ServerVerifier):
         self.sock = transport
         self.sock.listen()
 
-    def base(self):
+    def run(self):
         # Инициализация Сокета
         self.init_socket()
 
@@ -122,6 +133,8 @@ class Server(metaclass=ServerVerifier):
             # Если такой пользователь ещё не зарегистрирован, регистрируем, иначе отправляем ответ и завершаем соединение.
             if message[USER][ACCOUNT_LOGIN] not in self.names.keys():
                 self.names[message[USER][ACCOUNT_LOGIN]] = client
+                client_ip, client_port = client.getpeername()
+                self.database.user_login(message[USER][ACCOUNT_LOGIN], client_ip, client_port)
                 send_message(client, RESPONSE_200)
             else:
                 response = RESPONSE_400
@@ -137,9 +150,10 @@ class Server(metaclass=ServerVerifier):
             return
         # Если клиент выходит
         elif ACTION in message and message[ACTION] == EXIT and ACCOUNT_LOGIN in message:
-            self.clients.remove(self.names[ACCOUNT_LOGIN])
-            self.names[ACCOUNT_LOGIN].close()
-            del self.names[ACCOUNT_LOGIN]
+            self.database.user_logout(message[ACCOUNT_LOGIN])
+            self.clients.remove(self.names[message[ACCOUNT_LOGIN]])
+            self.names[message[ACCOUNT_LOGIN]].close()
+            del self.names[message[ACCOUNT_LOGIN]]
             return
         # Иначе отдаём Bad request
         else:
@@ -149,12 +163,50 @@ class Server(metaclass=ServerVerifier):
             return
 
 
+def print_help():
+    print('Поддерживаемые комманды:')
+    print('users - список известных пользователей')
+    print('connected - список подключенных пользователей')
+    print('loghist - история входов пользователя')
+    print('exit - завершение работы сервера.')
+    print('help - вывод справки по поддерживаемым командам')
+
+
 def main():
     # Загрузка параметров командной строки, если нет параметров, то задаём значения по умоланию.
     listen_address, listen_port = arg_parser()
-    # Создание экземпляра класса - сервера.
-    server = Server(listen_address, listen_port)
-    server.base()
+
+    # Инициализация базы данных
+    database = ServerStorage()
+
+    # Создание экземпляра класса - сервера и его запуск:
+    server = Server(listen_address, listen_port, database)
+    server.daemon = True
+    server.start()
+
+    # Печатаем справку:
+    print_help()
+
+    # Основной цикл сервера:
+    while True:
+        command = input('Введите комманду: ')
+        if command == 'help':
+            print_help()
+        elif command == 'exit':
+            break
+        elif command == 'users':
+            for user in sorted(database.users_list()):
+                print(f'Пользователь {user[0]}, последний вход: {user[1]}')
+        elif command == 'connected':
+            for user in sorted(database.active_users_list()):
+                print(f'Пользователь {user[0]}, подключен: {user[1]}:{user[2]}, время установки соединения: {user[3]}')
+        elif command == 'loghist':
+            name = input(
+                'Введите имя пользователя для просмотра истории. Для вывода всей истории, просто нажмите Enter: ')
+            for user in sorted(database.login_history(name)):
+                print(f'Пользователь: {user[0]} время входа: {user[1]}. Вход с: {user[2]}:{user[3]}')
+        else:
+            print('Команда не распознана.')
 
 
 if __name__ == '__main__':
