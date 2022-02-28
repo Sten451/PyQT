@@ -373,7 +373,7 @@ def main():
         transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         # Таймаут 1 секунда, необходим для освобождения сокета.
-        transport.settimeout(1)
+        transport.settimeout(3)
 
         transport.connect((server_address, server_port))
         send_message(transport, create_presence(client_name))

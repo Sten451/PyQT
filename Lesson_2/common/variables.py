@@ -2,7 +2,7 @@
 import logging
 
 # Порт по умолчанию для сетевого ваимодействия
-DEF_PORT = 8000
+DEF_PORT = 8100
 # IP адрес по умолчанию для подключения клиента
 DEF_IP_ADDRESS = '127.0.0.1'
 # Максимальная очередь подключений
@@ -20,6 +20,8 @@ ACCOUNT_LOGIN = 'account_name'
 SENDER = 'sender'
 DESTINATION = 'to'
 
+# База данных для хранения данных сервера:
+SERVER_CONFIG = 'server.ini'
 
 # Прочие ключи, используемые в протоколе
 CODE_PRESENCE = 'presence'
@@ -31,14 +33,21 @@ EXIT = 'exit'
 
 LOGGING_LEVEL = logging.DEBUG
 
+GET_CONTACTS = 'get_contacts'
+LIST_INFO = 'data_list'
+REMOVE_CONTACT = 'remove'
+ADD_CONTACT = 'add'
+USERS_REQUEST = 'get_users'
+
 # Словари - ответы:
 # 200
 RESPONSE_200 = {CODE_RESPONSE: 200}
+# 202
+RESPONSE_202 = {CODE_RESPONSE: 202,
+                LIST_INFO:None
+                }
 # 400
 RESPONSE_400 = {
-    CODE_RESPONSE: 400,
-    CODE_ERROR: None
-}
-
-# База данных для хранения данных сервера:
-SERVER_DATABASE = 'sqlite:///server_base.db3'
+            CODE_RESPONSE: 400,
+            CODE_ERROR: None
+        }
