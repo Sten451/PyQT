@@ -39,6 +39,10 @@ REMOVE_CONTACT = 'remove'
 ADD_CONTACT = 'add'
 USERS_REQUEST = 'get_users'
 
+DATA = 'bin'
+PUBLIC_KEY = 'pubkey'
+PUBLIC_KEY_REQUEST = 'pubkey_need'
+
 # Словари - ответы:
 # 200
 RESPONSE_200 = {CODE_RESPONSE: 200}
@@ -51,3 +55,13 @@ RESPONSE_400 = {
             CODE_RESPONSE: 400,
             CODE_ERROR: None
         }
+
+RESPONSE_205 = {
+    CODE_RESPONSE: 205
+}
+
+RESPONSE_511 = {
+    CODE_RESPONSE: 511,
+    DATA: None
+}
+
