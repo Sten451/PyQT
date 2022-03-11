@@ -16,7 +16,7 @@
     <script src="_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
-    <link rel="prev" title="Logs package" href="logs.html" />
+    <link rel="prev" title="Client module documentation" href="client.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -73,6 +73,51 @@
 </section>
 <section id="core-py">
 <h2>core.py<a class="headerlink" href="#core-py" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="server.core.MessageProcessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">server.core.</span></span><span class="sig-name descname"><span class="pre">MessageProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listen_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listen_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/server/core.html#MessageProcessor"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#server.core.MessageProcessor" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Основной класс сервера. Принимает содинения, словари - пакеты
+от клиентов, обрабатывает поступающие сообщения.
+Работает в качестве отдельного потока.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="server.core.MessageProcessor.autorize_user">
+<span class="sig-name descname"><span class="pre">autorize_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sock</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/server/core.html#MessageProcessor.autorize_user"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#server.core.MessageProcessor.autorize_user" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод реализующий авторизцию пользователей.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="server.core.MessageProcessor.init_socket">
+<span class="sig-name descname"><span class="pre">init_socket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/server/core.html#MessageProcessor.init_socket"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#server.core.MessageProcessor.init_socket" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод инициализатор сокета.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="server.core.MessageProcessor.process_message">
+<span class="sig-name descname"><span class="pre">process_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/server/core.html#MessageProcessor.process_message"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#server.core.MessageProcessor.process_message" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод отправки сообщения клиенту.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="server.core.MessageProcessor.remove_client">
+<span class="sig-name descname"><span class="pre">remove_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/server/core.html#MessageProcessor.remove_client"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#server.core.MessageProcessor.remove_client" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод обработчик клиента с которым прервана связь.
+Ищет клиента и удаляет его из списков и базы:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="server.core.MessageProcessor.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/server/core.html#MessageProcessor.run"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#server.core.MessageProcessor.run" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод основной цикл потока.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="server.core.MessageProcessor.service_update_lists">
+<span class="sig-name descname"><span class="pre">service_update_lists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/server/core.html#MessageProcessor.service_update_lists"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#server.core.MessageProcessor.service_update_lists" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод реализующий отправки сервисного сообщения 205 клиентам.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="database-py">
 <h2>database.py<a class="headerlink" href="#database-py" title="Ссылка на этот заголовок">¶</a></h2>
@@ -349,8 +394,8 @@ SQLAlchemy ORM и используется классический подход
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="launcher.html">Launcher module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common.html">Common package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="client.html">Client module documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logs.html">Logs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client module documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Server module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#server-py">server.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#core-py">core.py</a></li>
@@ -368,7 +413,7 @@ SQLAlchemy ORM и используется классический подход
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="logs.html" title="предыдущая глава">Logs package</a></li>
+      <li>Previous: <a href="client.html" title="предыдущая глава">Client module documentation</a></li>
   </ul></li>
 </ul>
 </div>

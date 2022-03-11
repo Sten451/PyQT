@@ -1,12 +1,10 @@
-"""
-Декораторы
-"""
-
-import inspect
-import logging
-import socket
 import sys
+import logging
+import log.config_server_log
+import log.config_client_log
 import traceback
+import inspect
+import socket
 
 # метод определения модуля, источника запуска.
 # Метод find () возвращает индекс первого вхождения искомой подстроки,

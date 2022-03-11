@@ -1,19 +1,17 @@
 import argparse
 import logging
-import os
 import sys
-import log.config_client_log
-from Crypto.PublicKey import RSA
+import os
 from PyQt5.QtWidgets import QApplication, QMessageBox
+from Crypto.PublicKey import RSA
+from common.errors import ServerError
+from common.decoration import log
 from client.database import ClientDatabase
+from client.transport import ClientTransport
 from client.main_window import ClientMainWindow
 from client.start_dialog import UserNameDialog
-from client.transport import ClientTransport
 from common.variables import DEF_IP_ADDRESS, DEF_PORT
-from common.decoration import log
-from common.errors import ServerError
 
-# Инициализация клиентского логера
 logger = logging.getLogger('client')
 
 

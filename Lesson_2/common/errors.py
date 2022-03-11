@@ -9,11 +9,7 @@ class IncorrectDataRecivedError(Exception):
 
 
 class ServerError(Exception):
-
-    """Класс - исключение, для обработки ошибок сервера.
-    При генерации требует строку с описанием ошибки,
-    полученную с сервера."""
-
+    """Исключение - ошибка сервера"""
 
     def __init__(self, text):
         self.text = text

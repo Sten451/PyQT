@@ -1,10 +1,10 @@
 import json
 import sys
-
 from common.variables import MAX_PACKAGE_LENGTH, FORMAT
-from errors import IncorrectDataRecivedError, NonDictInputError
-from decoration import log
+from common.errors import IncorrectDataRecivedError, NonDictInputError
+from common.decoration import log
 sys.path.append('../')
+
 # Утилита приёма и декодирования сообщения
 # принимает байты выдаёт словарь, если приняточто-то другое отдаёт ошибку
 # значения

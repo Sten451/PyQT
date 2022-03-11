@@ -9,9 +9,8 @@ from Crypto.PublicKey import RSA
 from client.main_window_conv import Ui_MainClientWindow
 from client.add_contact import AddContactDialog
 from client.del_contact import DelContactDialog
-from common.variables import SENDER, MESSAGE_TEXT
 from common.errors import ServerError
-
+from common.variables import MESSAGE_TEXT, SENDER
 
 logger = logging.getLogger('client')
 

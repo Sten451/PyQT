@@ -41,12 +41,14 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
  | <a href="#М"><strong>М</strong></a>
  
@@ -60,6 +62,8 @@
 
       <ul>
         <li><a href="client.html#client.main_window.ClientMainWindow.add_contact">(метод client.main_window.ClientMainWindow)</a>
+</li>
+        <li><a href="client.html#client.transport.ClientTransport.add_contact">(метод client.transport.ClientTransport)</a>
 </li>
         <li><a href="server.html#server.database.ServerStorage.add_contact">(метод server.database.ServerStorage)</a>
 </li>
@@ -77,6 +81,8 @@
       <li><a href="client.html#client.add_contact.AddContactDialog">AddContactDialog (класс в client.add_contact)</a>
 </li>
       <li><a href="server.html#server.remove_user.DelUserDialog.all_users_fill">all_users_fill() (метод server.remove_user.DelUserDialog)</a>
+</li>
+      <li><a href="server.html#server.core.MessageProcessor.autorize_user">autorize_user() (метод server.core.MessageProcessor)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -104,11 +110,13 @@
 </li>
       <li><a href="client.html#client.main_window.ClientMainWindow">ClientMainWindow (класс в client.main_window)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="common.html#common.metaclasses.ClientMaker">ClientMaker (класс в common.metaclasses)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="client.html#client.main_window.ClientMainWindow.clients_list_update">clients_list_update() (метод client.main_window.ClientMainWindow)</a>
+</li>
+      <li><a href="client.html#client.transport.ClientTransport">ClientTransport (класс в client.transport)</a>
 </li>
       <li>
     common.decoration
@@ -119,9 +127,13 @@
       </ul></li>
       <li><a href="server.html#server.config_window.ConfigWindow">ConfigWindow (класс в server.config_window)</a>
 </li>
+      <li><a href="client.html#client.transport.ClientTransport.connection_init">connection_init() (метод client.transport.ClientTransport)</a>
+</li>
       <li><a href="client.html#client.main_window.ClientMainWindow.connection_lost">connection_lost() (метод client.main_window.ClientMainWindow)</a>
 </li>
       <li><a href="client.html#client.database.ClientDatabase.contacts_clear">contacts_clear() (метод client.database.ClientDatabase)</a>
+</li>
+      <li><a href="client.html#client.transport.ClientTransport.contacts_list_update">contacts_list_update() (метод client.transport.ClientTransport)</a>
 </li>
       <li><a href="server.html#server.stat_window.StatWindow.create_stat_model">create_stat_model() (метод server.stat_window.StatWindow)</a>
 </li>
@@ -181,7 +193,19 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="server.html#server.core.MessageProcessor.init_socket">init_socket() (метод server.core.MessageProcessor)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="server.html#server.config_window.ConfigWindow.initUI">initUI() (метод server.config_window.ConfigWindow)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="client.html#client.transport.ClientTransport.key_request">key_request() (метод client.transport.ClientTransport)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -213,6 +237,8 @@
 </li>
       <li><a href="server.html#server.database.ServerStorage.message_history">message_history() (метод server.database.ServerStorage)</a>
 </li>
+      <li><a href="server.html#server.core.MessageProcessor">MessageProcessor (класс в server.core)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -229,9 +255,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="common.html#common.descriptors.Port">Port (класс в common.descriptors)</a>
 </li>
+      <li><a href="server.html#server.core.MessageProcessor.process_message">process_message() (метод server.core.MessageProcessor)</a>
+
+      <ul>
+        <li><a href="server.html#server.database.ServerStorage.process_message">(метод server.database.ServerStorage)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="server.html#server.database.ServerStorage.process_message">process_message() (метод server.database.ServerStorage)</a>
+      <li><a href="client.html#client.transport.ClientTransport.process_server_ans">process_server_ans() (метод client.transport.ClientTransport)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -245,14 +277,26 @@
 </li>
       <li><a href="server.html#server.main_window.MainWindow.rem_user">rem_user() (метод server.main_window.MainWindow)</a>
 </li>
+      <li><a href="server.html#server.core.MessageProcessor.remove_client">remove_client() (метод server.core.MessageProcessor)</a>
+</li>
+      <li><a href="client.html#client.transport.ClientTransport.remove_contact">remove_contact() (метод client.transport.ClientTransport)</a>
+
+      <ul>
+        <li><a href="server.html#server.database.ServerStorage.remove_contact">(метод server.database.ServerStorage)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="server.html#server.database.ServerStorage.remove_contact">remove_contact() (метод server.database.ServerStorage)</a>
-</li>
       <li><a href="server.html#server.database.ServerStorage.remove_user">remove_user() (метод server.database.ServerStorage)</a>
 
       <ul>
         <li><a href="server.html#server.remove_user.DelUserDialog.remove_user">(метод server.remove_user.DelUserDialog)</a>
+</li>
+      </ul></li>
+      <li><a href="client.html#client.transport.ClientTransport.run">run() (метод client.transport.ClientTransport)</a>
+
+      <ul>
+        <li><a href="server.html#server.core.MessageProcessor.run">(метод server.core.MessageProcessor)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -270,7 +314,11 @@
       <li><a href="client.html#client.main_window.ClientMainWindow.select_active_user">select_active_user() (метод client.main_window.ClientMainWindow)</a>
 </li>
       <li><a href="client.html#client.main_window.ClientMainWindow.send_message">send_message() (метод client.main_window.ClientMainWindow)</a>
+
+      <ul>
+        <li><a href="client.html#client.transport.ClientTransport.send_message">(метод client.transport.ClientTransport)</a>
 </li>
+      </ul></li>
       <li><a href="server.html#server.main_window.MainWindow.server_config">server_config() (метод server.main_window.MainWindow)</a>
 </li>
       <li><a href="common.html#common.errors.ServerError">ServerError (класс в common.errors)</a>
@@ -291,6 +339,8 @@
 </li>
       <li><a href="server.html#server.database.ServerStorage.UsersHistory">ServerStorage.UsersHistory (класс в server.database)</a>
 </li>
+      <li><a href="server.html#server.core.MessageProcessor.service_update_lists">service_update_lists() (метод server.core.MessageProcessor)</a>
+</li>
       <li><a href="client.html#client.main_window.ClientMainWindow.set_active_user">set_active_user() (метод client.main_window.ClientMainWindow)</a>
 </li>
       <li><a href="client.html#client.main_window.ClientMainWindow.set_disabled_input">set_disabled_input() (метод client.main_window.ClientMainWindow)</a>
@@ -304,15 +354,25 @@
   </ul></td>
 </tr></table>
 
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="client.html#client.transport.ClientTransport.transport_shutdown">transport_shutdown() (метод client.transport.ClientTransport)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="server.html#server.database.ServerStorage.user_login">user_login() (метод server.database.ServerStorage)</a>
+      <li><a href="client.html#client.transport.ClientTransport.user_list_update">user_list_update() (метод client.transport.ClientTransport)</a>
 </li>
-      <li><a href="server.html#server.database.ServerStorage.user_logout">user_logout() (метод server.database.ServerStorage)</a>
+      <li><a href="server.html#server.database.ServerStorage.user_login">user_login() (метод server.database.ServerStorage)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="server.html#server.database.ServerStorage.user_logout">user_logout() (метод server.database.ServerStorage)</a>
+</li>
       <li><a href="client.html#client.start_dialog.UserNameDialog">UserNameDialog (класс в client.start_dialog)</a>
 </li>
       <li><a href="server.html#server.database.ServerStorage.users_list">users_list() (метод server.database.ServerStorage)</a>
@@ -355,8 +415,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="launcher.html">Launcher module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common.html">Common package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="client.html">Client module documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logs.html">Logs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client module documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">Server module</a></li>
 </ul>
 

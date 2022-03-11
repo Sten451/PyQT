@@ -2,6 +2,7 @@ import sys
 from ipaddress import ip_address
 from logging import getLogger
 from common.variables import DEF_PORT, DEF_IP_ADDRESS
+from log import config_server_log
 
 logger = getLogger('server')
 

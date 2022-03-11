@@ -1,5 +1,4 @@
 """Кофнфиг клиентского логгера"""
-
 import sys
 import os
 import logging

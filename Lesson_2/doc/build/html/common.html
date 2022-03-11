@@ -16,6 +16,7 @@
     <script src="_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Logs package" href="logs.html" />
     <link rel="prev" title="Launcher module" href="launcher.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -38,7 +39,6 @@
 <p>Пакет общих утилит, использующихся в разных модулях проекта.</p>
 <section id="module-common.decoration">
 <span id="decoration-py"></span><h2>Скрипт decoration.py<a class="headerlink" href="#module-common.decoration" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Декораторы</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="common.decoration.log">
 <span class="sig-prename descclassname"><span class="pre">common.decoration.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func_to_log</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/decoration.html#log"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#common.decoration.log" title="Ссылка на это определение">¶</a></dt>
@@ -70,9 +70,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="common.errors.ServerError">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">common.errors.</span></span><span class="sig-name descname"><span class="pre">ServerError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/errors.html#ServerError"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#common.errors.ServerError" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Класс - исключение, для обработки ошибок сервера.
-При генерации требует строку с описанием ошибки,
-полученную с сервера.</p>
+<dd><p>Исключение - ошибка сервера</p>
 </dd></dl>
 
 </section>
@@ -93,7 +91,7 @@
 <h2>Скрипт utils.py<a class="headerlink" href="#utils-py" title="Ссылка на этот заголовок">¶</a></h2>
 <p>common.utils. <strong>get_message</strong> (client)</p>
 <blockquote>
-<div><p>Функция2 приёма сообщений от удалённых компьютеров. Принимает сообщения JSON,
+<div><p>Функция приёма сообщений от удалённых компьютеров. Принимает сообщения JSON,
 декодирует полученное сообщение и проверяет что получен словарь.</p>
 </div></blockquote>
 <p>common.utils. <strong>send_message</strong> (sock, message)</p>
@@ -136,6 +134,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#variables-py">Скрипт variables.py</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="logs.html">Logs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client module documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Server module</a></li>
 </ul>
 
 <div class="relations">
@@ -143,6 +144,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="launcher.html" title="предыдущая глава">Launcher module</a></li>
+      <li>Next: <a href="logs.html" title="следующая глава">Logs package</a></li>
   </ul></li>
 </ul>
 </div>

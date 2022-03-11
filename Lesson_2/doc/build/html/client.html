@@ -16,8 +16,8 @@
     <script src="_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
-    <link rel="next" title="Logs package" href="logs.html" />
-    <link rel="prev" title="Common package" href="common.html" />
+    <link rel="next" title="Server module" href="server.html" />
+    <link rel="prev" title="Logs package" href="logs.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -173,6 +173,73 @@ SQLAlchemy ORM и используется классический подход
 </section>
 <section id="transport-py">
 <h2>transport.py<a class="headerlink" href="#transport-py" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="client.transport.ClientTransport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">client.transport.</span></span><span class="sig-name descname"><span class="pre">ClientTransport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс реализующий транспортную подсистему клиентского
+модуля. Отвечает за взаимодействие с сервером.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.add_contact">
+<span class="sig-name descname"><span class="pre">add_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contact</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.add_contact"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.add_contact" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод отправляющий на сервер сведения о добавлении контакта.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.connection_init">
+<span class="sig-name descname"><span class="pre">connection_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.connection_init"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.connection_init" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод отвечающий за устанновку соединения с сервером.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.contacts_list_update">
+<span class="sig-name descname"><span class="pre">contacts_list_update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.contacts_list_update"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.contacts_list_update" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод обновляющий с сервера список контактов.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.key_request">
+<span class="sig-name descname"><span class="pre">key_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.key_request"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.key_request" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод запрашивающий с сервера публичный ключ пользователя.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.process_server_ans">
+<span class="sig-name descname"><span class="pre">process_server_ans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.process_server_ans"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.process_server_ans" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод обработчик поступающих сообщений с сервера.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.remove_contact">
+<span class="sig-name descname"><span class="pre">remove_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contact</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.remove_contact"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.remove_contact" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод отправляющий на сервер сведения о удалении контакта.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.run"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.run" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод содержащий основной цикл работы транспортного потока.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.send_message">
+<span class="sig-name descname"><span class="pre">send_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.send_message"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.send_message" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод отправляющий на сервер сообщения для пользователя.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.transport_shutdown">
+<span class="sig-name descname"><span class="pre">transport_shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.transport_shutdown"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.transport_shutdown" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод уведомляющий сервер о завершении работы клиента.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="client.transport.ClientTransport.user_list_update">
+<span class="sig-name descname"><span class="pre">user_list_update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/client/transport.html#ClientTransport.user_list_update"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#client.transport.ClientTransport.user_list_update" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод обновляющий с сервера список пользователей.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="main-window-py">
 <h2>main_window.py<a class="headerlink" href="#main-window-py" title="Ссылка на этот заголовок">¶</a></h2>
@@ -339,6 +406,7 @@ SQLAlchemy ORM и используется классический подход
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="launcher.html">Launcher module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common.html">Common package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logs.html">Logs package</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Client module documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#client-py">client.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#database-py">database.py</a></li>
@@ -349,7 +417,6 @@ SQLAlchemy ORM и используется классический подход
 <li class="toctree-l2"><a class="reference internal" href="#del-contact-py">del_contact.py</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="logs.html">Logs package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">Server module</a></li>
 </ul>
 
@@ -357,8 +424,8 @@ SQLAlchemy ORM и используется классический подход
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="common.html" title="предыдущая глава">Common package</a></li>
-      <li>Next: <a href="logs.html" title="следующая глава">Logs package</a></li>
+      <li>Previous: <a href="logs.html" title="предыдущая глава">Logs package</a></li>
+      <li>Next: <a href="server.html" title="следующая глава">Server module</a></li>
   </ul></li>
 </ul>
 </div>
