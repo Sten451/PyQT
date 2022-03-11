@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>server.stat_window &#8212; документация Telegram 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Исходный код server.stat_window</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QDialog</span><span class="p">,</span> <span class="n">QPushButton</span><span class="p">,</span> <span class="n">QTableView</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtGui</span> <span class="kn">import</span> <span class="n">QStandardItemModel</span><span class="p">,</span> <span class="n">QStandardItem</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="kn">import</span> <span class="n">Qt</span>
+
+
+<div class="viewcode-block" id="StatWindow"><a class="viewcode-back" href="../../server.html#server.stat_window.StatWindow">[документация]</a><span class="k">class</span> <span class="nc">StatWindow</span><span class="p">(</span><span class="n">QDialog</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Класс - окно со статистикой пользователей</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">database</span> <span class="o">=</span> <span class="n">database</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">initUI</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">initUI</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Настройки окна:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Статистика клиентов&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">700</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">WA_DeleteOnClose</span><span class="p">)</span>
+
+        <span class="c1"># Кнапка закрытия окна</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s1">&#39;Закрыть&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">650</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
+
+        <span class="c1"># Лист с собственно статистикой</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stat_table</span> <span class="o">=</span> <span class="n">QTableView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stat_table</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stat_table</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">580</span><span class="p">,</span> <span class="mi">620</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_stat_model</span><span class="p">()</span>
+
+<div class="viewcode-block" id="StatWindow.create_stat_model"><a class="viewcode-back" href="../../server.html#server.stat_window.StatWindow.create_stat_model">[документация]</a>    <span class="k">def</span> <span class="nf">create_stat_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Метод реализующий заполнение таблицы статистикой сообщений.&#39;&#39;&#39;</span>
+        <span class="c1"># Список записей из базы</span>
+        <span class="n">stat_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">message_history</span><span class="p">()</span>
+
+        <span class="c1"># Объект модели данных:</span>
+        <span class="nb">list</span> <span class="o">=</span> <span class="n">QStandardItemModel</span><span class="p">()</span>
+        <span class="nb">list</span><span class="o">.</span><span class="n">setHorizontalHeaderLabels</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;Имя Клиента&#39;</span><span class="p">,</span> <span class="s1">&#39;Последний раз входил&#39;</span><span class="p">,</span> <span class="s1">&#39;Сообщений отправлено&#39;</span><span class="p">,</span> <span class="s1">&#39;Сообщений получено&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">stat_list</span><span class="p">:</span>
+            <span class="n">user</span><span class="p">,</span> <span class="n">last_seen</span><span class="p">,</span> <span class="n">sent</span><span class="p">,</span> <span class="n">recvd</span> <span class="o">=</span> <span class="n">row</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">QStandardItem</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+            <span class="n">user</span><span class="o">.</span><span class="n">setEditable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">last_seen</span> <span class="o">=</span> <span class="n">QStandardItem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">last_seen</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">microsecond</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span>
+            <span class="n">last_seen</span><span class="o">.</span><span class="n">setEditable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">sent</span> <span class="o">=</span> <span class="n">QStandardItem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sent</span><span class="p">))</span>
+            <span class="n">sent</span><span class="o">.</span><span class="n">setEditable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">recvd</span> <span class="o">=</span> <span class="n">QStandardItem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">recvd</span><span class="p">))</span>
+            <span class="n">recvd</span><span class="o">.</span><span class="n">setEditable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="nb">list</span><span class="o">.</span><span class="n">appendRow</span><span class="p">([</span><span class="n">user</span><span class="p">,</span> <span class="n">last_seen</span><span class="p">,</span> <span class="n">sent</span><span class="p">,</span> <span class="n">recvd</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stat_table</span><span class="o">.</span><span class="n">setModel</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stat_table</span><span class="o">.</span><span class="n">resizeColumnsToContents</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stat_table</span><span class="o">.</span><span class="n">resizeRowsToContents</span><span class="p">()</span></div></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Telegram</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../launcher.html">Launcher module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common.html">Common package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../client.html">Client module documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logs.html">Logs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server.html">Server module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Код модуля</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Sten.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

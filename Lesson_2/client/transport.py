@@ -1,16 +1,19 @@
+import json
+import logging
 import socket
 import time
-import logging
-import json
 import threading
 import hashlib
 import hmac
 import binascii
 from PyQt5.QtCore import pyqtSignal, QObject
 
-from common.utils import *
-from common.variables import *
-from errors import ServerError
+#from common.errors import ServerError
+from common.utils import send_message, get_message
+from common.variables import ACTION, CODE_PRESENCE, CURRENT_TIME, USER, ACCOUNT_LOGIN, PUBLIC_KEY, CODE_RESPONSE, \
+    CODE_ERROR, DATA, RESPONSE_511, MESSAGE, SENDER, DESTINATION, MESSAGE_TEXT, GET_CONTACTS, LIST_INFO, USERS_REQUEST, \
+    PUBLIC_KEY_REQUEST, ADD_CONTACT, REMOVE_CONTACT, EXIT
+
 
 # Логер и объект блокировки для работы с сокетом.
 logger = logging.getLogger('client')
@@ -126,7 +129,8 @@ class ClientTransport(threading.Thread, QObject):
                         # Если всё нормально, то продолжаем процедуру
                         # авторизации.
                         ans_data = ans[DATA]
-                        hash = hmac.new(passwd_hash_string, ans_data.encode('utf-8'), 'MD5')
+                        hash = hmac.new(
+                            passwd_hash_string, ans_data.encode('utf-8'), 'MD5')
                         digest = hash.digest()
                         my_ans = RESPONSE_511
                         my_ans[DATA] = binascii.b2a_base64(

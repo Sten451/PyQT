@@ -1,16 +1,19 @@
-import threading
 import logging
+import threading
 import select
 import socket
 import json
 import hmac
 import binascii
 import os
-from metaclasses import ServerMaker
-from descriptors import Port
-from common.variables import *
+from common.variables import MAX_CONNECTIONS, DESTINATION, SENDER, ACTION, CODE_PRESENCE, CURRENT_TIME, USER, MESSAGE, \
+    MESSAGE_TEXT, RESPONSE_200, RESPONSE_400, EXIT, ACCOUNT_LOGIN, GET_CONTACTS, RESPONSE_202, LIST_INFO, \
+    ADD_CONTACT, REMOVE_CONTACT, USERS_REQUEST, PUBLIC_KEY_REQUEST, RESPONSE_511, DATA, CODE_RESPONSE, PUBLIC_KEY, \
+    RESPONSE_205, CODE_ERROR
+from common.descriptors import Port
 from common.utils import send_message, get_message
-from decoration import login_required
+from common.decoration import login_required
+
 
 # Загрузка логера
 logger = logging.getLogger('server')
@@ -86,7 +89,8 @@ class MessageProcessor(threading.Thread):
                         self.process_client_message(
                             get_message(client_with_message), client_with_message)
                     except (OSError, json.JSONDecodeError, TypeError) as err:
-                        logger.debug(f'Getting data from client exception.', exc_info=err)
+                        logger.debug(
+                            f'Getting data from client exception.', exc_info=err)
                         self.remove_client(client_with_message)
 
     def remove_client(self, client):
@@ -121,7 +125,7 @@ class MessageProcessor(threading.Thread):
         Метод отправки сообщения клиенту.
         '''
         if message[DESTINATION] in self.names and self.names[message[DESTINATION]
-        ] in self.listen_sockets:
+                                                             ] in self.listen_sockets:
             try:
                 send_message(self.names[message[DESTINATION]], message)
                 logger.info(
@@ -274,7 +278,11 @@ class MessageProcessor(threading.Thread):
             message_auth[DATA] = random_str.decode('ascii')
             # Создаём хэш пароля и связки с рандомной строкой, сохраняем
             # серверную версию ключа
-            hash = hmac.new(self.database.get_hash(message[USER][ACCOUNT_LOGIN]), random_str, 'MD5')
+            hash = hmac.new(
+                self.database.get_hash(
+                    message[USER][ACCOUNT_LOGIN]),
+                random_str,
+                'MD5')
             digest = hash.digest()
             logger.debug(f'Auth message = {message_auth}')
             try:

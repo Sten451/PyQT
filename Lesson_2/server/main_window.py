@@ -1,5 +1,5 @@
 
-from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication, QLabel, QTableView
+from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QLabel, QTableView
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtCore import QTimer
 from server.stat_window import StatWindow

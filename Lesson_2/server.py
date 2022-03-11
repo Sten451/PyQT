@@ -1,20 +1,20 @@
-import sys
+import logging
 import os
 import argparse
 import configparser
+import sys
 import log.config_server_log
-from common.variables import *
-from common.utils import *
-from decoration import log
-from server.database import ServerStorage
-from PyQt5.QtWidgets import QApplication
-from server.main_window import MainWindow
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from server.core import MessageProcessor
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication
+from common.variables import DEF_PORT
+from server.database import ServerStorage
+from server.main_window import MainWindow
+from server.core import MessageProcessor
+from common.decoration import log
 
 # Инициализация логирования сервера.
 logger = logging.getLogger('server')
+
 
 @log
 def arg_parser(default_port, default_address):

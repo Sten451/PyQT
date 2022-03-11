@@ -30,7 +30,6 @@ CODE_ERROR = 'error'
 MESSAGE = 'message'
 MESSAGE_TEXT = 'mess_text'
 EXIT = 'exit'
-
 LOGGING_LEVEL = logging.DEBUG
 
 GET_CONTACTS = 'get_contacts'
@@ -38,7 +37,6 @@ LIST_INFO = 'data_list'
 REMOVE_CONTACT = 'remove'
 ADD_CONTACT = 'add'
 USERS_REQUEST = 'get_users'
-
 DATA = 'bin'
 PUBLIC_KEY = 'pubkey'
 PUBLIC_KEY_REQUEST = 'pubkey_need'
